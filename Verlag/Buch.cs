@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Verlag
 {
-    internal class Buch
+    public class Buch
     {
         private string autor;
         private string titel;
@@ -25,6 +25,22 @@ namespace Verlag
             this.auflage = auflage;
         }
 
-        
+        public int Auflage
+        {
+
+            get { return auflage; }
+        }
+
+        public string Autor
+        {
+
+            get { return autor; }
+        }
+
+        public string Titel
+        {
+
+            get { return titel; }
+        }
     }
 }
