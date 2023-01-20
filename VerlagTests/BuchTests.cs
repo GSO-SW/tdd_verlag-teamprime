@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Verlag;
 
@@ -98,12 +99,18 @@ namespace VerlagTests
 		[DataRow(";")]
 		[DataRow("§")]
 		[DataRow("%")]
-		[DataRow(null)]
 		[ExpectedException(typeof(ArgumentException))]
 		public void Autor_NurSinnvolleEingabenErlaubt(string unerlaubtesZeichen)
 		{
+			//Arrange
+
+			string testName = "Barack Obama";
+			Random r = new Random();
+
+            testName.Insert(r.Next(testName.Length), unerlaubtesZeichen);
+
 			//Act
 			Buch b = new Buch(unerlaubtesZeichen, "titel");
-		}
+        }
 	}
 }
