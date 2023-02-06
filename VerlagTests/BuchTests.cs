@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Verlag;
+using isbn;
 
 namespace VerlagTests
 {
@@ -41,8 +42,8 @@ namespace VerlagTests
         public void Autor_DarfVeraendertWerden()
         {
             //Arrange
-            string autor = "Abdullah";
-            string autorNeu = "Thomas";
+            string autor = "Gugu";
+            string autorNeu = "Ugur";
 
             //Act
             Buch b = new Buch(autor, "titel", "isbn");
@@ -104,7 +105,7 @@ namespace VerlagTests
         public void Autor_NurSinnvolleEingabenErlaubt(string unerlaubtesZeichen)
         {
             //Arrange
-            string name = "Salih";
+            string name = "Ugur";
             name = name + unerlaubtesZeichen;
 
             //Act
@@ -166,12 +167,9 @@ namespace VerlagTests
                 ISBN isbn = new ISBN(isbn13);
 
                 //Assert
-                Assert.AreEqual(isbn10, isbn.Isbn10);
+                Assert.AreEqual(isbn10, isbn.isbn10);
             }
         }
     }
-
-
-
 }
-}
+

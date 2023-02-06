@@ -11,14 +11,14 @@ namespace Verlag
         private string autor;
         private string titel;
         private int auflage;
-        public string ISBN;
+        private string ISBN;
 
         public Buch (string autor, string titel, string ISBN)
         {
             this.autor = autor;
             this.titel = titel;
             this.auflage = 1;
-            this.ISBN = ISBN;
+            this.isbn = ISBN;
         }
 
         public Buch(string autor, string titel, int auflage) : this(autor, titel, ISBN)
@@ -42,6 +42,12 @@ namespace Verlag
         {
             get { return titel; }
             set { titel = value; }
+        }
+
+        public string ISBN
+        {
+            get { return ISBN; }
+            set { ISBN = value; }
         }
     }
 }
